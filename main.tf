@@ -47,7 +47,7 @@ resource "aws_security_group_role" "blog_http_in" {
   security_group_id = aws_security_group.blog.id
 }
 
-resource "aws_security_group_role" "blog_http_in" {
+resource "aws_security_group_role" "blog_https_in" {
   type              = "ingress"
   from_port         = 443
   to_port           = 443
@@ -57,7 +57,7 @@ resource "aws_security_group_role" "blog_http_in" {
   security_group_id = aws_security_group.blog.id
 }
 
-resource "aws_security_group_role" "blog_http_in" {
+resource "aws_security_group_role" "blog_all_out" {
   type              = "engress"
   from_port         = 0
   to_port           = 0
