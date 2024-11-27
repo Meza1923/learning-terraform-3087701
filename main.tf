@@ -21,7 +21,7 @@ module "blog_vpc" {
   name = "dev"
   cidr = "10.0.0.0/16"
 
-  azs = ["us-west-2a", "us-west-2b"]
+  azs = ["us-west-2a", "us-west-2b","us-west-2c"]
 
   tags = {
     Terraform = "true"
@@ -48,7 +48,7 @@ module "blog_sg" {
   version = "4.13.0"
   
 
-  vpc_id = module.blog_vpc.vpc_id
+  vpc_id  = module.blog_vpc.vpc_id
   name    = "blog"
   ingress_rules       = ["http-80-tcp","https-443-tcp"]
   ingress_cidr_blocks = ["0.0.0.0/0"]
