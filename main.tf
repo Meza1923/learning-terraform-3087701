@@ -70,13 +70,13 @@ module "alb" {
       target_type = "instance"
       target = {
         my_target = {
-          target_id = aws_instance_blog.id
+          target_id = aws_instance.blog.id
           port = 80
         }
       }
     }
   ]
-  
+
   tags = {
     Environment = "dev"
   }
