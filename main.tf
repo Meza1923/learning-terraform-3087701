@@ -48,8 +48,8 @@ module "alb" {
 
   name    = "blog-alb"
   vpc_id  = "module.blog_vpc.vpc_id"
-  subnets = "module.blog_vpc.public_subnets[0]"
-  security_groups = module.bolg_sg.security_group_id
+  subnets = "module.blog_vpc.public_subnets"
+  security_groups = [module.bolg_sg.security_group_id]
 
   listeners = {
     ex-http-https-redirect = {
